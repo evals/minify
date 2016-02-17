@@ -150,8 +150,6 @@ class Minify
       {
         $this->provider->minify();
       }
-
-    $this->fullUrl = false;
   }
 
   /**
@@ -159,7 +157,7 @@ class Minify
    */
   protected function render()
   {
-    $baseUrl = $this->fullUrl ? $this->getBaseUrl() : '';
+    $baseUrl = $this->getBaseUrl();
     if (!$this->minifyForCurrentEnvironment())
       {
         return $this->provider->tags($baseUrl, $this->attributes);
